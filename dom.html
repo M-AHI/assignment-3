@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Hello</p>
+    <button id="b1">Delete the paragraph</button>
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Action</td>
+        </tr>
+        <tr>
+            <td>Imran</td>
+            <td><button class="del">Delete</button></td>
+        </tr>
+        <tr>
+            <td>Hasan</td>
+            <td><button class="del">Delete</button></td>
+        </tr>
+    </table>
+    <script>
+        //document.getElementById("b1").addEventListener("click",function(){
+           // let x = document.getElementById("p1");
+            //x.remove();
+       // });
+      // let button = document.getElementById("b1");
+       //button.addEventListener("click",function(){
+        //document.getElementById("p1").remove();
+       //});
+       document.addEventListener('DOMContentLoaded', () => {
+    // Select all delete buttons
+    const deleteButtons = document.querySelectorAll('.del');
+
+    // Add click event listeners to all delete buttons
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the row to delete
+            const row = this.closest('tr');
+            // Remove the row from the table
+            row.remove();
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
